@@ -8,9 +8,6 @@ public abstract class Loop implements Runnable {
 	public Loop(double rate) {
 		this.rate = rate;
 		
-	}
-	
-	public final void start() {
 		this.running = true;
 		new Thread(this).start();
 	}
@@ -45,8 +42,8 @@ public abstract class Loop implements Runnable {
 	
 	public abstract void execute();
 	
-	/*
-	 * Override function.
+	/**
+	 * Override this function.
 	 */
 	public void conclude() {}
 	

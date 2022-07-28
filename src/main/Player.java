@@ -1,16 +1,21 @@
 package main;
 
-public class Player {
+public class Player extends Entity{
 
-	public double x,y,z;
-	private double speed;
+	private final String username;
 	
-	public Player() {
-		this.x = 0;
-		this.y = 0;
-		this.z = 0;
+	public Player(String username) {
+		this.username = username;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
 		
-		this.speed = 1.25;
+		if (obj instanceof Player) {
+			return ((Player) obj).username.equals(this.username);
+		}
+		
+		return false;
 	}
 	
 }
